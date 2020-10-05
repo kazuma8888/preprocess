@@ -1,0 +1,4 @@
+# One-Hot encoding
+for feature in ['REPLACE ME']:
+    x_train = pd.get_dummies(x_train, dummy_na=True, dtype=np.uint8, prefix=feature)
+    x_test = pd.get_dummies(x_test, dummy_na=True, dtype=np.uint8, prefix=feature)
