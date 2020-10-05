@@ -1,4 +1,17 @@
 # One-Hot encoding
-for feature in ['REPLACE ME']:
+for column in encode_columns:
     x_train = pd.get_dummies(x_train, dummy_na=True, dtype=np.uint8, prefix=feature)
     x_test = pd.get_dummies(x_test, dummy_na=True, dtype=np.uint8, prefix=feature)
+    
+
+#Label encoding
+#-------------------------------
+from sklearn import preprocessing 
+#-------------------------------
+for column in encode_columns:
+    lbl = preprocessing.LabelEncoder()
+    lbl.fit(x_train[column])
+    x_train[column] = lbl.transform(x_train[column])
+    lbl.fit(x_test[column])
+    x_test[column] = lbl.transform(x_test[column])
+    
