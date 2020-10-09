@@ -1,13 +1,11 @@
 # One-Hot encoding
 for column in encode_columns:
-    x_train = pd.get_dummies(x_train, dummy_na=True, dtype=np.uint8, prefix=feature)
-    x_test = pd.get_dummies(x_test, dummy_na=True, dtype=np.uint8, prefix=feature)
+    x_train = pd.get_dummies(x_train, dummy_na=True, dtype=np.uint8)
+    x_test = pd.get_dummies(x_test, dummy_na=True, dtype=np.uint8)
     
 
 #Label encoding
-#-------------------------------
 from sklearn import preprocessing 
-#-------------------------------
 for column in encode_columns:
     lbl = preprocessing.LabelEncoder()
     lbl.fit(x_train[column])
