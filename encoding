@@ -1,7 +1,7 @@
 # One-Hot encoding
 for column in encode_columns:
-    x_train = pd.get_dummies(x_train, dummy_na=True, dtype=np.uint8)
-    x_test = pd.get_dummies(x_test, dummy_na=True, dtype=np.uint8)
+    x_train[column] = pd.get_dummies(x_train[column], dummy_na=True, dtype=np.uint8)
+    x_test[column] = pd.get_dummies(x_test[column], dummy_na=True, dtype=np.uint8)
     
 
 #Label encoding
